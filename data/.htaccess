@@ -1,0 +1,12 @@
+# Nothing in this app ever needs these JSON files served directly over HTTP -
+# the frontend only reaches them through the PHP endpoints in /api, which
+# read the files on disk rather than fetching this URL. Blocking direct
+# access stops someone from just visiting /data/admin.json (or
+# registered-users.json, with its hashed passwords) in a browser.
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order deny,allow
+  Deny from all
+</IfModule>

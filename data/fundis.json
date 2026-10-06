@@ -1,0 +1,6 @@
+[
+  { "id": "f001", "username": "jpelectric", "name": "Jean Paul Habimana", "trade": "Electrician", "location": "Kacyiru, Kigali", "rate": 5000, "rateUnit": "per hour", "rating": 4.8, "bio": "10 years wiring homes and offices across Kigali." },
+  { "id": "f002", "username": "aliceplumb", "name": "Alice Uwase", "trade": "Plumber", "location": "Kimironko, Kigali", "rate": 4500, "rateUnit": "per hour", "rating": 4.6, "bio": "Specialist in leak repair and bathroom installations." },
+  { "id": "f003", "username": "erictailor", "name": "Eric Nshimiyimana", "trade": "Tailor", "location": "Nyamirambo, Kigali", "rate": 3000, "rateUnit": "per item", "rating": 4.9, "bio": "Custom suits, dresses, and quick alterations." },
+  { "id": "f004", "username": "dianewood", "name": "Diane Mukamana", "trade": "Carpenter", "location": "Remera, Kigali", "rate": 6000, "rateUnit": "per hour", "rating": 4.7, "bio": "Custom furniture and home repairs, 8 years experience." }
+]

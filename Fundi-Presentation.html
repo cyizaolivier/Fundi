@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fundi | Product & Business Model</title>
+<style>
+  @page { size: 13.333in 7.5in; margin: 0; }
+  :root { --olive:#616e00; --brand:#9baf02; --ink:#22250e; --soft:#666949; --cream:#f0f1e1; --line:#dfe2cf; --white:#fff; --forest:#353b0c; --gold:#c89b1c; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; padding:0; font-family:"Aptos","Segoe UI",Arial,sans-serif; color:var(--ink); background:#dfe2cf; }
+  .slide { width:13.333in; height:7.5in; position:relative; overflow:hidden; page-break-after:always; padding:.58in .72in .5in; background:var(--white); }
+  .slide:last-child { page-break-after:auto; }
+  .slide::after { content:""; position:absolute; left:.72in; right:.72in; bottom:.35in; border-top:1px solid var(--line); }
+  .top { display:flex; justify-content:space-between; align-items:center; margin-bottom:.33in; }
+  .top img { width:1.42in; height:auto; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.16em; color:var(--olive); font-size:10px; font-weight:800; }
+  .folio { position:absolute; bottom:.15in; right:.72in; color:#858872; font-size:9px; }
+  h1,h2,h3,p { margin:0; }
+  h1,h2,h3 { letter-spacing:-.035em; }
+  h1 { font-size:44px; line-height:1.03; }
+  h2 { font-size:31px; line-height:1.08; max-width:10.5in; }
+  h3 { font-size:16px; line-height:1.15; }
+  .sub { margin-top:.13in; color:var(--soft); font-size:15px; line-height:1.45; }
+  .small { color:var(--soft); font-size:10px; line-height:1.45; }
+  .lead { color:var(--soft); font-size:17px; line-height:1.45; max-width:8.5in; }
+  .tag { display:inline-block; border:1px solid var(--line); border-radius:99px; padding:6px 11px; color:var(--olive); font-size:10px; font-weight:700; }
+  .accent { color:var(--olive); }
+  .cover { background:var(--cream); }
+  .cover::before { content:""; position:absolute; width:5.7in; height:5.7in; border-radius:50%; background:#e3e8bc; right:-1.2in; top:-1.3in; }
+  .cover::after { border:0; width:3.6in; height:3.6in; background:var(--brand); opacity:.14; border-radius:50%; left:auto; right:1.0in; bottom:-1.5in; }
+  .cover .top,.cover .cover-content,.cover .cover-bottom { position:relative; z-index:1; }
+  .cover .top { margin-bottom:1.18in; }
+  .cover img { width:2.0in; }
+  .cover h1 { font-size:52px; max-width:8.2in; }
+  .cover .lead { margin-top:.22in; max-width:7.5in; font-size:19px; }
+  .cover-bottom { position:absolute; left:.72in; right:.72in; bottom:.78in; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-bottom p { font-size:11px; color:var(--soft); }
+  .cover-bottom strong { color:var(--ink); }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:.22in; margin-top:.31in; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:.18in; margin-top:.3in; }
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:.14in; margin-top:.3in; }
+  .card { background:#fafbf4; border:1px solid var(--line); border-radius:12px; padding:.2in .22in; }
+  .card p { color:var(--soft); font-size:11.5px; line-height:1.4; margin-top:7px; }
+  .card .num { color:var(--brand); font-size:24px; font-weight:800; line-height:1; margin-bottom:9px; }
+  .callout { margin-top:.22in; padding:.16in .2in; border-left:4px solid var(--brand); background:var(--cream); border-radius:0 8px 8px 0; font-size:11px; color:var(--ink); line-height:1.45; }
+  .steps { display:grid; grid-template-columns:repeat(5,1fr); gap:.12in; margin-top:.4in; align-items:stretch; }
+  .step { background:var(--cream); border-radius:12px; padding:.2in .16in; position:relative; min-height:1.75in; }
+  .step:not(:last-child)::after { content:"→"; position:absolute; right:-.13in; top:.44in; color:var(--olive); font-weight:800; font-size:18px; z-index:2; }
+  .step .num { background:var(--olive); color:white; border-radius:50%; width:25px; height:25px; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; margin-bottom:.13in; }
+  .step p { color:var(--soft); font-size:10.5px; line-height:1.35; margin-top:7px; }
+  .role-head { display:flex; gap:10px; align-items:center; margin-bottom:10px; }
+  .icon { width:32px; height:32px; display:flex; align-items:center; justify-content:center; border-radius:9px; background:var(--cream); color:var(--olive); font-size:16px; font-weight:800; }
+  .checklist { list-style:none; padding:0; margin:.15in 0 0; }
+  .checklist li { position:relative; padding-left:19px; margin:.1in 0; color:var(--soft); font-size:11.5px; line-height:1.4; }
+  .checklist li::before { content:"✓"; position:absolute; left:0; color:var(--olive); font-weight:900; }
+  .band { margin-top:.29in; background:var(--forest); color:white; border-radius:13px; padding:.18in .24in; display:flex; justify-content:space-between; align-items:center; gap:.2in; }
+  .band p { color:#e8ebd4; font-size:11px; line-height:1.45; }
+  .band strong { color:white; }
+  .statline { display:flex; gap:.14in; margin-top:.3in; }
+  .stat { flex:1; border-top:3px solid var(--brand); padding:.14in .13in; background:#fafbf4; }
+  .stat strong { display:block; font-size:18px; color:var(--olive); }
+  .stat span { font-size:10px; color:var(--soft); }
+  .model { display:grid; grid-template-columns:1.12fr .88fr; gap:.22in; margin-top:.25in; }
+  .pricebox { background:var(--forest); color:white; border-radius:14px; padding:.25in; }
+  .pricebox .eyebrow { color:#dce79b; }
+  .pricebox .big { font-size:35px; font-weight:800; letter-spacing:-.04em; margin:.1in 0; }
+  .pricebox p { color:#e8ebd4; font-size:11px; line-height:1.4; }
+  .pricebox .math { margin-top:.17in; border-top:1px solid #697044; padding-top:.13in; }
+  .timeline { display:grid; grid-template-columns:repeat(3,1fr); gap:.17in; margin-top:.29in; }
+  .phase { border-top:4px solid var(--brand); background:#fafbf4; padding:.17in; border-radius:0 0 10px 10px; }
+  .phase .when { font-weight:800; color:var(--olive); font-size:11px; margin-bottom:8px; }
+  .phase p { margin-top:7px; color:var(--soft); font-size:10.5px; line-height:1.4; }
+  .dark { background:var(--forest); color:white; }
+  .dark::after { border-color:#59603b; }
+  .dark .eyebrow { color:#dce79b; }
+  .dark .sub,.dark .small { color:#e1e4cf; }
+  .dark .card { background:#41471d; border-color:#59603b; }
+  .dark .card h3 { color:white; }
+  .dark .card p { color:#e1e4cf; }
+  .dark .callout { background:#41471d; color:white; border-color:var(--brand); }
+  .close { display:flex; flex-direction:column; justify-content:center; height:5.25in; }
+  .close h2 { font-size:43px; max-width:8.3in; }
+  .close .lead { margin-top:.22in; color:#e1e4cf; }
+  .close .tag { margin-top:.27in; color:#e1e4cf; border-color:#687047; }
+  @media print { html,body { background:white; } .slide { box-shadow:none; } }
+</style>
+</head>
+<body>
+<section class="slide cover">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"></div>
+  <div class="cover-content">
+    <p class="eyebrow">PRODUCT & BUSINESS MODEL</p>
+    <h1>Local skills.<br><span class="accent">Easier to find.</span></h1>
+    <p class="lead">A two-sided marketplace connecting households with local tradespeople—starting in Kigali.</p>
+    <p style="margin-top:.27in"><span class="tag">Working concept deck · October 2026</span></p>
+  </div>
+  <div class="cover-bottom"><p><strong>Fundi</strong><br>Rwanda · Local services</p><p>Product overview · Pilot strategy · Revenue hypothesis</p></div>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"><span class="eyebrow">01 · THE OPPORTUNITY</span></div>
+  <h2>Finding reliable help is still too <span class="accent">hard and fragmented.</span></h2>
+  <p class="sub">The customer problem Fundi is designed to address—hypotheses to validate with Kigali households and tradespeople.</p>
+  <div class="grid3">
+    <article class="card"><div class="num">01</div><h3>Discovery depends on word of mouth</h3><p>Customers can struggle to find available providers beyond their personal network.</p></article>
+    <article class="card"><div class="num">02</div><h3>Comparisons take effort</h3><p>Rates, location, experience, and reputation are often difficult to compare in one place.</p></article>
+    <article class="card"><div class="num">03</div><h3>Small providers need reach</h3><p>Independent fundis need a simple way to present their work and manage incoming requests.</p></article>
+  </div>
+  <div class="callout"><strong>Opportunity:</strong> Make local services easier to discover, compare, request, and review—without claiming every provider is already verified.</div>
+  <span class="folio">FUNDI · PRODUCT & BUSINESS MODEL · 02</span>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"><span class="eyebrow">02 · THE PRODUCT</span></div>
+  <h2>One simple flow, with value for <span class="accent">both sides.</span></h2>
+  <p class="sub">The current product is a responsive React marketplace backed by PHP endpoints and JSON-file storage.</p>
+  <div class="steps">
+    <article class="step"><div class="num">1</div><h3>Discover</h3><p>Search by trade, name, or area; filter the Kigali fundi directory.</p></article>
+    <article class="step"><div class="num">2</div><h3>Compare</h3><p>Review a profile, location, rate, availability, and client ratings.</p></article>
+    <article class="step"><div class="num">3</div><h3>Request</h3><p>Choose a preferred date and describe the job for a selected fundi.</p></article>
+    <article class="step"><div class="num">4</div><h3>Coordinate</h3><p>Track pending/accepted status; exchange contact details after acceptance.</p></article>
+    <article class="step"><div class="num">5</div><h3>Build trust</h3><p>After completion, the client can leave a star rating and optional review.</p></article>
+  </div>
+  <div class="callout"><strong>Important boundary:</strong> The app does not yet process payments, guarantee service quality, provide live chat, or verify provider identity.</div>
+  <span class="folio">FUNDI · PRODUCT & BUSINESS MODEL · 03</span>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"><span class="eyebrow">03 · TWO-SIDED VALUE</span></div>
+  <h2>Make each side’s next step <span class="accent">obvious.</span></h2>
+  <div class="grid2">
+    <article class="card">
+      <div class="role-head"><span class="icon">C</span><div><p class="eyebrow">CLIENTS</p><h3>Find help with more confidence</h3></div></div>
+      <ul class="checklist"><li>Compare tradespeople in one directory.</li><li>See listed rates, locations, availability, and review signals.</li><li>Send and track a booking request.</li><li>Reveal contact details only after the provider accepts.</li><li>Review the work after completion.</li></ul>
+    </article>
+    <article class="card">
+      <div class="role-head"><span class="icon">F</span><div><p class="eyebrow">FUNDIS</p><h3>Turn skills into more opportunities</h3></div></div>
+      <ul class="checklist"><li>Create a trade profile with a short bio.</li><li>Set a rate and availability.</li><li>Accept, decline, and manage requests.</li><li>Build a public reputation through client reviews.</li><li>Exchange contact details with clients on accepted work.</li></ul>
+    </article>
+  </div>
+  <div class="band"><p><strong>Marketplace flywheel</strong><br>More reliable supply → better selection → more completed jobs → stronger reviews → more customer confidence.</p><span class="tag">Proposed growth loop</span></div>
+  <span class="folio">FUNDI · PRODUCT & BUSINESS MODEL · 04</span>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"><span class="eyebrow">04 · STARTING MARKET</span></div>
+  <h2>Start focused: prove a dense, dependable <span class="accent">Kigali marketplace.</span></h2>
+  <p class="sub">A practical launch wedge is one city, a few high-frequency trades, and carefully chosen neighbourhoods.</p>
+  <div class="grid4">
+    <article class="card"><p class="eyebrow">WHERE</p><h3>Kigali first</h3><p>Concentrate demand and provider availability before expanding to other cities.</p></article>
+    <article class="card"><p class="eyebrow">WHO</p><h3>Households & small businesses</h3><p>People who need local repair, improvement, tailoring, or maintenance work.</p></article>
+    <article class="card"><p class="eyebrow">SUPPLY</p><h3>Independent fundis</h3><p>Electricians, plumbers, carpenters, tailors, and adjacent service providers.</p></article>
+    <article class="card"><p class="eyebrow">WEDGE</p><h3>Quality before breadth</h3><p>Recruit responsive providers in selected areas; expand as service density grows.</p></article>
+  </div>
+  <div class="statline">
+    <div class="stat"><strong>4 trades</strong><span>shown in the current demo directory</span></div>
+    <div class="stat"><strong>Kigali</strong><span>initial product geography</span></div>
+    <div class="stat"><strong>0 market-size claims</strong><span>validate demand before sizing expansion</span></div>
+  </div>
+  <div class="callout"><strong>Market sizing next step:</strong> estimate the reachable market bottom-up using target neighbourhoods × active providers × monthly jobs × average job value. Treat these as research inputs, not current traction.</div>
+  <span class="folio">FUNDI · PRODUCT & BUSINESS MODEL · 05</span>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"><span class="eyebrow">05 · REVENUE HYPOTHESIS</span></div>
+  <h2>Earn when a job is completed—not just when a lead is sent.</h2>
+  <p class="sub">Recommended direction for testing; this is a proposed business model, not a feature currently implemented.</p>
+  <div class="model">
+    <div>
+      <article class="card"><p class="eyebrow">CORE MODEL TO TEST</p><h3>Transparent commission on completed work</h3><p>Keep basic discovery and profiles free during the pilot. Once customers and fundis confirm value, test a modest fee on platform-attributed completed jobs.</p></article>
+      <article class="card" style="margin-top:.14in"><p class="eyebrow">LATER, IF EARNED</p><h3>Optional provider tools</h3><p>Consider paid visibility or a provider subscription only after proving that listings generate incremental, quality work. Keep ranking fair and label promotions.</p></article>
+    </div>
+    <aside class="pricebox">
+      <p class="eyebrow">ILLUSTRATIVE UNIT ECONOMICS</p>
+      <div class="big">RWF 5,000</div>
+      <p>Example fee at a hypothetical 10% on a RWF 50,000 completed job.</p>
+      <p class="math"><strong>Not a forecast.</strong> Validate fee acceptance, average job value, completion tracking, payment costs, taxes, and support costs before setting pricing.</p>
+    </aside>
+  </div>
+  <div class="callout"><strong>Current limitation:</strong> Payments and commission collection are not built. Contact is shared after acceptance, so off-platform completion and revenue leakage are real risks.</div>
+  <span class="folio">FUNDI · PRODUCT & BUSINESS MODEL · 06</span>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"><span class="eyebrow">06 · GO-TO-MARKET</span></div>
+  <h2>Build local density before broad awareness.</h2>
+  <p class="sub">A lean pilot can test both marketplace sides and reveal where trust or fulfillment breaks down.</p>
+  <div class="grid3">
+    <article class="card"><div class="num">01</div><h3>Recruit supply</h3><p>Interview fundis, explain the value exchange, help create accurate profiles, and agree a clear response standard.</p></article>
+    <article class="card"><div class="num">02</div><h3>Seed neighborhood demand</h3><p>Start with community referrals, local groups, property managers, and small-business partnerships.</p></article>
+    <article class="card"><div class="num">03</div><h3>Follow every request</h3><p>Manually learn why requests are accepted, declined, delayed, completed, or abandoned.</p></article>
+  </div>
+  <div class="grid2">
+    <article class="card"><p class="eyebrow">PILOT EXPERIMENT</p><h3>One neighborhood × two or three trades</h3><p>Recruit a small cohort (for example, 20–30 providers as a test target) and measure active, responsive supply—not signup count alone.</p></article>
+    <article class="card"><p class="eyebrow">LEARNING LOOP</p><h3>Interview both sides weekly</h3><p>Ask clients about trust, price clarity, and outcomes; ask fundis about lead quality, effort, earnings, and repeat use.</p></article>
+  </div>
+  <span class="folio">FUNDI · PRODUCT & BUSINESS MODEL · 07</span>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"><span class="eyebrow">07 · TRUST & OPERATIONS</span></div>
+  <h2>Trust is the product—and the work behind it.</h2>
+  <div class="grid2">
+    <article class="card"><p class="eyebrow">ALREADY IN THE APP</p><h3>Useful trust signals</h3><ul class="checklist"><li>Public profiles, listed rates, location, and availability.</li><li>Booking status and client reviews after completion.</li><li>Contact details shared only on an accepted booking.</li></ul></article>
+    <article class="card"><p class="eyebrow">BEFORE A PUBLIC PILOT</p><h3>Operational trust to build</h3><ul class="checklist"><li>Provider identity/skill checks and a transparent verification label.</li><li>Clear cancellation, complaint, and dispute-handling policy.</li><li>Support escalation, safety guidance, and review moderation.</li><li>Consent, contact-data retention, and privacy controls.</li></ul></article>
+  </div>
+  <div class="band"><p><strong>Scale readiness:</strong> The current PHP + JSON setup is suitable for a prototype/demo, not production marketplace volume. Add robust authentication, authorization, auditability, backups, and scalable storage before launch.</p></div>
+  <span class="folio">FUNDI · PRODUCT & BUSINESS MODEL · 08</span>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"><span class="eyebrow">08 · EXECUTION ROADMAP</span></div>
+  <h2>Learn, prove fulfillment, then automate.</h2>
+  <div class="timeline">
+    <article class="phase"><p class="when">0–30 DAYS · DISCOVERY</p><h3>Validate the pain</h3><p>Interview households and fundis; map current discovery and payment behavior; confirm first trades and neighborhoods.</p><p><strong>Output:</strong> pilot scope, trust checklist, pricing hypotheses.</p></article>
+    <article class="phase"><p class="when">30–90 DAYS · CONCIERGE PILOT</p><h3>Prove successful matches</h3><p>Recruit and coach a small cohort; track response, acceptance, completion, issues, repeat use, and willingness to pay.</p><p><strong>Output:</strong> evidence for marketplace liquidity and economics.</p></article>
+    <article class="phase"><p class="when">90+ DAYS · PRODUCTIZE</p><h3>Invest based on evidence</h3><p>Prioritize payment/fee flow, messaging, provider verification, support tooling, and better operational analytics.</p><p><strong>Output:</strong> a safer and more measurable service marketplace.</p></article>
+  </div>
+  <div class="callout"><strong>Core scorecard:</strong> time to first response · request acceptance rate · completed-job rate · cancellation/dispute rate · repeat booking · active fundis · client and provider satisfaction · contribution margin.</div>
+  <span class="folio">FUNDI · PRODUCT & BUSINESS MODEL · 09</span>
+</section>
+
+<section class="slide dark">
+  <div class="top"><img src="public/brand/fundi-logo.png" alt="Fundi"><span class="eyebrow">THE NEXT STEP</span></div>
+  <div class="close">
+    <p class="eyebrow">A focused pilot can answer the big questions.</p>
+    <h2>Can Fundi make local work easier to find—and better to deliver?</h2>
+    <p class="lead">Start with one Kigali neighborhood, a dependable group of fundis, and a measurable set of completed jobs.</p>
+    <p><span class="tag">Pilot objective: prove trust · match quality · repeat value</span></p>
+  </div>
+  <div class="cover-bottom"><p><strong>Fundi</strong><br>Local skills. Easier to find.</p><p>Business model and market assumptions are hypotheses for validation.</p></div>
+  <span class="folio">FUNDI · PRODUCT & BUSINESS MODEL · 10</span>
+</section>
+</body>
+</html>
